@@ -4,39 +4,62 @@
 <meta charset="UTF-8">
 <title>Interactive Image Animation on Click</title>
 <style>
-  body, html {
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .control-panel {
-    position: fixed;
-    top: 10px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-  .button {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    color: white;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
-  }
-  #imageLoader {
-    display: none;
-  }
-</style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .control-panel {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      padding: 0 10px;
+    }
+    .button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: white;
+      background-color: #4CAF50; /* Change the color */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      outline: none;
+      transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    }
+    .button:hover {
+      background-color: #45a049; /* Darker shade for hover effect */
+    }
+    #uploadButton {
+      background-color: #008CBA; /* Different color for the upload button */
+    }
+    #uploadButton:hover {
+      background-color: #007B9E; /* Darker shade for the upload button on hover */
+    }
+    #imageLoader {
+      display: none;
+    }
+  
+    /* Adjustments for smaller screens */
+    @media (max-width: 600px) {
+      .control-panel {
+        justify-content: space-around;
+      }
+      .button {
+        flex-basis: 100%; /* Make buttons full width on small screens */
+        margin: 5px 0; /* Add vertical spacing */
+      }
+    }
+  </style>
+  
+  
 </head>
 <body>
 
